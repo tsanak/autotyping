@@ -75,7 +75,7 @@ ul.menu {
     margin-right: 0;
 }
 
-.menu .menu--item a {
+.menu--item a {
     position: relative;
     display: block;
     color: var(--main-text);
@@ -90,12 +90,12 @@ ul.menu {
     transition: all 250ms;
 }
 
-.menu .menu--item a:hover {
+.menu--item a:hover {
     top: 5px;
     right: -5px;
 }
 
-.menu .menu--item a:after {
+.menu--item a:after {
     content: '';
     position: absolute;
     top: 0;
@@ -109,9 +109,16 @@ ul.menu {
     transition: all 250ms;
 }
 
-.menu .menu--item a:hover:after {
+.menu--item a:hover:after {
     bottom: 0;
     right: 0;
+}
+
+.github {
+    position: fixed;
+    top: 0;
+    right: 5px;
+    z-index: 3;
 }
 
 .logo {
@@ -229,10 +236,18 @@ footer a {
     .menu .menu--item {
         margin-right: 0;
     }
+
+    .github {
+        top: unset;
+        bottom: 5px;
+    }
 }
     </style>
 </head>
 <body>
+    <div class="github menu--item">
+        <a href="https://github.com/tsanak/autotyping">GITHUB</a>
+    </div>
     <div class="center">
         <div class="logo">
             <h1>AutoTyping.js</h1>
@@ -257,7 +272,9 @@ footer a {
 
         <div class="box" id="description">
             <p class="title">DESCRIPTION</p>
-            <p class="description">AutoTyping.js is a lightweight (1.86 kb) library that <span class="what-is-autotyping"></span></p>
+            <p class="description">
+                AutoTyping.js is a lightweight (1.86 kb) and easy to use library that writes and deletes text. <span class="what-is-autotyping"></span>
+            </p>
         </div>
 
         <div class="box" id="getting-started">
@@ -352,7 +369,11 @@ This is where you write the text that will be written and deleted by the library
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const what_is_auto = new AutoTyping('.what-is-autotyping', ['writes and deletes text.']);
+            const what_is_auto = new AutoTyping('.what-is-autotyping', ['Helping you create animated typing effects.'], {
+                typeSpeed: 100,
+                deleteSpeed: 100,
+                waitBeforeDelete: 2000
+            });
             what_is_auto.start()
 
             const exampleText = ['I can write a whole sentence.', 'I can write single', 'words'];
