@@ -6,204 +6,230 @@
     <title>AutoTyping</title>
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --main-bg: #f5f5f5;
-            --main-text: #171717;
-            --main-border: #171717;
-            --highlight-text: #fff;
-        }
+:root {
+    --main-bg: #f5f5f5;
+    --main-text: #171717;
+    --main-border: #171717;
+    --highlight-text: #fff;
+}
 
-        ::-moz-selection {
-            color: var(--highlight-text);
-            background: var(--main-text);
-        }
+::-moz-selection {
+    color: var(--highlight-text);
+    background: var(--main-text);
+}
 
-        ::selection {
-            color: var(--highlight-text);
-            background: var(--main-text);
-        }
+::selection {
+    color: var(--highlight-text);
+    background: var(--main-text);
+}
 
-        html {
-           scroll-behavior: smooth;
-        }
+html {
+   scroll-behavior: smooth;
+}
 
-        body {
-            font-family: 'Share Tech Mono', sans-serif;
-            font-size: 24px;
-            letter-spacing: 0.35px;
-            background: var(--main-bg);
-            color: var(--main-text);
-            margin: 0;
-            padding: 15px;
-        }
+body {
+    font-family: 'Share Tech Mono', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.35px;
+    background: var(--main-bg);
+    color: var(--main-text);
+    margin: 0;
+    padding: 15px;
+}
 
-        p {
-            margin-top: 0.5em;
-            margin-bottom: 0.5em;
-        }
+p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
 
-        .text-bold {
-            font-weight: bold;
-        }
+.text-bold {
+    font-weight: bold;
+}
 
-        nav {
-            width: 100%;
-            max-width: 750px;
-            margin: 20px 0 40px;
-        }
+nav {
+    width: 100%;
+    max-width: 750px;
+    margin: 20px 0 40px;
+}
 
-        ul.menu {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
+ul.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
             justify-content: space-between;
-            flex-wrap: wrap;
-        }
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
 
-        .menu .menu--item {
-            margin-bottom: 15px;
-            margin-right: 15px;
-        }
+.menu .menu--item {
+    margin-bottom: 15px;
+    margin-right: 15px;
+}
 
-        .menu .menu--item:last-child {
-            margin-right: 0;
-        }
+.menu .menu--item:last-child {
+    margin-right: 0;
+}
 
-        .menu .menu--item a {
-            position: relative;
-            display: block;
-            color: var(--main-text);
-            padding: 10px 5px;
-            background: #fff;
-            border: 3px solid var(--main-border);
-            text-decoration: none;
-            top: 0;
-            right: 0;
-            transition: all 250ms;
-        }
+.menu .menu--item a {
+    position: relative;
+    display: block;
+    color: var(--main-text);
+    padding: 10px 5px;
+    background: #fff;
+    border: 3px solid var(--main-border);
+    text-decoration: none;
+    top: 0;
+    right: 0;
+    -webkit-transition: all 250ms;
+    -o-transition: all 250ms;
+    transition: all 250ms;
+}
 
-        .menu .menu--item a:hover {
-            top: 5px;
-            right: -5px;
-        }
+.menu .menu--item a:hover {
+    top: 5px;
+    right: -5px;
+}
 
-        .menu .menu--item a:after {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: -8px;
-            left: 1px;
-            right: -8px;
-            background: var(--main-border);
-            z-index: -1;
-            transition: all 250ms;
-        }
+.menu .menu--item a:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: -8px;
+    left: 1px;
+    right: -8px;
+    background: var(--main-border);
+    z-index: -1;
+    -webkit-transition: all 250ms;
+    -o-transition: all 250ms;
+    transition: all 250ms;
+}
 
-        .menu .menu--item a:hover:after {
-            bottom: 0;
-            right: 0;
-        }
+.menu .menu--item a:hover:after {
+    bottom: 0;
+    right: 0;
+}
 
-        .logo {
-            margin-top: 10px;
-            margin-bottom: 25px;
-        }
+.logo {
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
 
-        .logo h1 {
-            margin: 0;
-        }
+.logo h1 {
+    margin: 0;
+}
 
-        .center {
-            display: flex;
+.center {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
             justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
             align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
             flex-direction: column;
-        }
+}
 
-        .box {
-            border: 3px solid var(--main-border);
-            padding: 40px 20px 20px;
-            max-width: 700px;
-            background: #fff;
-            position: relative;
-            z-index: 2;
+.box {
+    border: 3px solid var(--main-border);
+    padding: 40px 20px 20px;
+    max-width: 700px;
+    background: #fff;
+    position: relative;
+    z-index: 2;
+    -webkit-box-shadow: 5px 5px 0 var(--main-border);
             box-shadow: 5px 5px 0 var(--main-border);
-            margin-bottom: 25px;
-        }
+    margin-bottom: 25px;
+}
 
-        .box .title {
-            position: absolute;
-            top: 0;
-            left: 0;
-            margin: 0;
-            background: var(--main-text);
-            color: var(--highlight-text);
-            padding: 5px;
-            font-size: 0.8em;
-        }
+.box .title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    background: var(--main-text);
+    color: var(--highlight-text);
+    padding: 5px;
+    font-size: 0.8em;
+}
 
-        .description,
-        .description ol {
-            margin: 0;
-        }
+.description,
+.description ol {
+    margin: 0;
+}
 
-        ol li {
-            margin-bottom: 0.5em;
-        }
+ol li {
+    margin-bottom: 0.5em;
+}
 
-        code {
-            padding: 5px;
-            background: #ddd;
-            font-size: 0.8em;
-            display: block;
-            overflow-x: auto;
-        }
+code {
+    padding: 5px;
+    background: #ddd;
+    font-size: 0.8em;
+    display: block;
+    overflow-x: auto;
+}
 
-        pre {
-            margin: 0.25em 0;
-        }
+pre {
+    margin: 0.25em 0;
+}
 
-        footer {
-            min-height: 70px;
-            display: flex;
+footer {
+    min-height: 70px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
             align-items: center;
-        }
+}
 
-        footer a {
-            color: var(--main-text);
-        }
+footer a {
+    color: var(--main-text);
+}
 
-        .footer-text {
-            min-width: 40px;
-            display: inline-block;
-            text-align: center;
-        }
+.footer-text {
+    min-width: 40px;
+    display: inline-block;
+    text-align: center;
+}
 
-        @media screen and (max-width: 768px) {
-            .box {
-                max-width: calc(100% - 50px);
-            }
-        }
+@media screen and (max-width: 768px) {
+    .box {
+        max-width: calc(100% - 50px);
+    }
+}
 
-        @media screen and (max-width: 600px) {
-            body {
-                font-size: 18px;
-            }
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 18px;
+    }
 
-            ol {
-                list-style: none;
-                padding: 0;
-            }
+    ol {
+        list-style: none;
+        padding: 0;
+    }
 
-            nav .menu {
+    nav .menu {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
                 flex-direction: column;
-            }
+    }
 
-            .menu .menu--item {
-                margin-right: 0;
-            }
-        }
+    .menu .menu--item {
+        margin-right: 0;
+    }
+}
     </style>
 </head>
 <body>
@@ -231,8 +257,7 @@
 
         <div class="box" id="description">
             <p class="title">DESCRIPTION</p>
-            <p class="description">AutoTyping.js is a lightweight (1.8 kb) library that <span class="what-is-autotyping"></span>
-            </p>
+            <p class="description">AutoTyping.js is a lightweight (1.86 kb) library that <span class="what-is-autotyping"></span></p>
         </div>
 
         <div class="box" id="getting-started">
@@ -283,6 +308,9 @@ This is where you write the text that will be written and deleted by the library
                             </li>
                             <li><span class="text-bold">waitBetweenWords</span>: in ms, default: 1000
                                 <p>Controls how much time the library will wait before writing the next word.</p>
+                            </li>
+                            <li><span class="text-bold">writeWhole</span>: Boolean, default: false
+                                <p>Controls if the text should be written all together (word per word and not character by character).</p>
                             </li>
                         </ul>
                     </li>
