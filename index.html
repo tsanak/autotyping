@@ -1,4 +1,12 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AutoTyping</title><link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet"><style>:root {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoTyping</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+:root {
     --main-bg: #f5f5f5;
     --main-text: #171717;
     --main-border: #171717;
@@ -221,12 +229,103 @@ footer a {
     .menu .menu--item {
         margin-right: 0;
     }
-}</style></head><body><div class="center"><div class="logo"><h1>AutoTyping.js</h1></div><nav><ul class="menu"><li class="menu--item"><a href="#description">DESCRIPTION</a></li><li class="menu--item"><a href="#getting-started">GETTING STARTED</a></li><li class="menu--item"><a href="#options">OPTIONS</a></li><li class="menu--item"><a href="#examples">EXAMPLES</a></li></ul></nav><div class="box" id="description"><p class="title">DESCRIPTION</p><p class="description">AutoTyping.js is a lightweight (1.86 kb) library that <span class="what-is-autotyping"></span></p></div><div class="box" id="getting-started"><p class="title">GETTING STARTED</p><div class="description"><ol><li>Grab the minified javascript file from <code>dist/autotyping.js</code></li><li>Initiate the library with <code>const typing = new AutoTyping('selector', [array of words]);</code><p>e.g.</p><code>const typing = new AutoTyping('.my-selector', ['lorem ipsum etc', 'after the first text']);</code></li><li>Start the typing with below code: <code>typing.start();</code></li></ol></div></div><div class="box" id="options"><p class="title">OPTIONS</p><p class="description"></p><ol><li>[REQUIRED] <span class="text-bold">selector</span> (either the id or the class of the element). The selector is where the autotyping will be initiated.</li><li>[REQUIRED] <span class="text-bold">text</span> (Array of Strings). e.g.<pre><code>[
+}
+    </style>
+</head>
+<body>
+    <div class="center">
+        <div class="logo">
+            <h1>AutoTyping.js</h1>
+        </div>
+
+        <nav>
+            <ul class="menu">
+                <li class="menu--item">
+                    <a href="#description">DESCRIPTION</a>
+                </li>
+                <li class="menu--item">
+                    <a href="#getting-started">GETTING STARTED</a>
+                </li>
+                <li class="menu--item">
+                    <a href="#options">OPTIONS</a>
+                </li>
+                <li class="menu--item">
+                    <a href="#examples">EXAMPLES</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="box" id="description">
+            <p class="title">DESCRIPTION</p>
+            <p class="description">AutoTyping.js is a lightweight (1.86 kb) library that <span class="what-is-autotyping"></span></p>
+        </div>
+
+        <div class="box" id="getting-started">
+            <p class="title">GETTING STARTED</p>
+            <div class="description">
+                <ol>
+                    <li>
+                        Grab the minified javascript file from <code>dist/autotyping.js</code>
+                    </li>
+                    <li>
+                        Initiate the library with <code>
+                            const typing = new AutoTyping('selector', [array of words]);
+                        </code>
+                        <p>e.g.</p>
+                        <code>
+                            const typing = new AutoTyping('.my-selector', ['lorem ipsum etc', 'after the first text']);
+                        </code>
+                    </li>
+                    <li>
+                        Start the typing with below code: <code>typing.start();</code>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="box" id="options">
+            <p class="title">OPTIONS</p>
+            <p class="description">
+                <ol>
+                    <li>[REQUIRED] <span class="text-bold">selector</span> (either the id or the class of the element). The selector is where the autotyping will be initiated.</li>
+                    <li>[REQUIRED] <span class="text-bold">text</span> (Array of Strings). e.g. <pre><code>[
     'first text',
     'second text',
     'etc...'
-]</code></pre>This is where you write the text that will be written and deleted by the library.</li><li>[OPTIONAL] <span class="text-bold">options</span> (object/map). This is how you control the library's behavior.<ul><li><span class="text-bold">typeSpeed</span>: in ms, default: 150<p>Controls the writing speed of each character.</p></li><li><span class="text-bold">deleteSpeed</span>: in ms, default: 150<p>Controls how fast/slow each character is deleted.</p></li><li><span class="text-bold">waitBeforeDelete</span>: in ms, default: 1000<p>Controls how much time the library will wait before deleting a word.</p></li><li><span class="text-bold">waitBetweenWords</span>: in ms, default: 1000<p>Controls how much time the library will wait before writing the next word.</p></li><li><span class="text-bold">writeWhole</span>: Boolean, default: false<p>Controls if the text should be written all together (word per word and not character by character).</p></li></ul></li></ol><p></p></div><div class="box" id="examples"><p class="title">EXAMPLES</p><div class="description"><span>HTML:</span><pre><code>&lt;p&gt;This is an example: &lt;span class="example-selector"&gt;&lt;/span&gt;&lt;/p&gt;
-</code></pre><span>Javascript:</span><pre><code>&lt;script src="dist/autotyping.min.js"&gt;&lt;/script&gt;
+]</code></pre>
+This is where you write the text that will be written and deleted by the library.
+                    </li>
+                    <li>[OPTIONAL] <span class="text-bold">options</span> (object/map). This is how you control the library's behavior. 
+                        <ul>
+                            <li><span class="text-bold">typeSpeed</span>: in ms, default: 150
+                                <p>Controls the writing speed of each character.</p>
+                            </li>
+                            <li><span class="text-bold">deleteSpeed</span>: in ms, default: 150
+                                <p>Controls how fast/slow each character is deleted.</p>
+                            </li>
+                            <li><span class="text-bold">waitBeforeDelete</span>: in ms, default: 1000
+                                <p>Controls how much time the library will wait before deleting a word.</p>
+                            </li>
+                            <li><span class="text-bold">waitBetweenWords</span>: in ms, default: 1000
+                                <p>Controls how much time the library will wait before writing the next word.</p>
+                            </li>
+                            <li><span class="text-bold">writeWhole</span>: Boolean, default: false
+                                <p>Controls if the text should be written all together (word per word and not character by character).</p>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </p>
+        </div>
+        <div class="box" id="examples">
+            <p class="title">EXAMPLES</p>
+            <div class="description">
+            <span>HTML:</span>
+<pre><code>&lt;p&gt;This is an example: &lt;span class="example-selector"&gt;&lt;/span&gt;&lt;/p&gt;
+</code></pre>
+<span>Javascript:</span>
+
+<pre><code>&lt;script src="dist/autotyping.min.js"&gt;&lt;/script&gt;
 &lt;script&gt;
     document.addEventListener("DOMContentLoaded", function() {
         const exampleText = ['I can write a whole sentence.', 'Or', 'single', 'words'];
@@ -239,7 +338,20 @@ footer a {
         exampleTyping.start()
     });
 &lt;/script&gt;
-</code></pre><p>This is the live example of the above code:</p><p>This is an example: <span class="example-selector"></span></p></div></div><footer><p>Created with <span class="footer-text"></span> by <a href="https://github.com/tsanak">tsanak</a></p></footer></div><script>document.addEventListener("DOMContentLoaded", function() {
+</code></pre>
+<p>This is the live example of the above code:</p>
+<p>This is an example: <span class="example-selector"></span></p>
+            </div>
+        </div>
+
+        <footer>
+            <p>
+                Created with <span class="footer-text"></span> by <a href="https://github.com/tsanak">tsanak</a>
+            </p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
             const what_is_auto = new AutoTyping('.what-is-autotyping', ['writes and deletes text.']);
             what_is_auto.start()
 
@@ -253,4 +365,8 @@ footer a {
             exampleTyping.start()
 
             new AutoTyping('.footer-text', ['❤️', '☕', '⌨️', '💻'], { waitBeforeDelete: 1000, waitBetweenWords: 10, writeWhole: true}).start();
-        });</script><script src="autotyping.min.js"></script></body></html>
+        });
+    </script>
+    <script src='/dist/autotyping.min.js'></script>
+</body>
+</html>
