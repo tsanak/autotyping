@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoTyping</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --main-bg: #f5f5f5;
+            --main-text: #171717;
+            --main-border: #171717;
+            --highlight-text: #fff;
+        }
+
+        ::-moz-selection {
+            color: var(--highlight-text);
+            background: var(--main-text);
+        }
+
+        ::selection {
+            color: var(--highlight-text);
+            background: var(--main-text);
+        }
+
+        html {
+           scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Share Tech Mono', sans-serif;
+            font-size: 24px;
+            letter-spacing: 0.35px;
+            background: var(--main-bg);
+            color: var(--main-text);
+            margin: 0;
+            padding: 15px;
+        }
+
+        p {
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .text-bold {
+            font-weight: bold;
+        }
+
+        nav {
+            width: 100%;
+            max-width: 750px;
+            margin: 20px 0 40px;
+        }
+
+        ul.menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .menu .menu--item {
+            margin-bottom: 15px;
+            margin-right: 15px;
+        }
+
+        .menu .menu--item:last-child {
+            margin-right: 0;
+        }
+
+        .menu .menu--item a {
+            position: relative;
+            display: block;
+            color: var(--main-text);
+            padding: 10px 5px;
+            background: #fff;
+            border: 3px solid var(--main-border);
+            text-decoration: none;
+            top: 0;
+            right: 0;
+            transition: all 250ms;
+        }
+
+        .menu .menu--item a:hover {
+            top: 5px;
+            right: -5px;
+        }
+
+        .menu .menu--item a:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: -8px;
+            left: 1px;
+            right: -8px;
+            background: var(--main-border);
+            z-index: -1;
+            transition: all 250ms;
+        }
+
+        .menu .menu--item a:hover:after {
+            bottom: 0;
+            right: 0;
+        }
+
+        .logo {
+            margin-top: 10px;
+            margin-bottom: 25px;
+        }
+
+        .logo h1 {
+            margin: 0;
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .box {
+            border: 3px solid var(--main-border);
+            padding: 40px 20px 20px;
+            max-width: 700px;
+            background: #fff;
+            position: relative;
+            z-index: 2;
+            box-shadow: 5px 5px 0 var(--main-border);
+            margin-bottom: 25px;
+        }
+
+        .box .title {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 0;
+            background: var(--main-text);
+            color: var(--highlight-text);
+            padding: 5px;
+            font-size: 0.8em;
+        }
+
+        .description,
+        .description ol {
+            margin: 0;
+        }
+
+        ol li {
+            margin-bottom: 0.5em;
+        }
+
+        code {
+            padding: 5px;
+            background: #ddd;
+            font-size: 0.8em;
+            display: block;
+            overflow-x: auto;
+        }
+
+        pre {
+            margin: 0.25em 0;
+        }
+
+        footer {
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+        }
+
+        footer a {
+            color: var(--main-text);
+        }
+
+        .footer-text {
+            min-width: 40px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 768px) {
+            .box {
+                max-width: calc(100% - 50px);
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            body {
+                font-size: 18px;
+            }
+
+            ol {
+                list-style: none;
+                padding: 0;
+            }
+
+            nav .menu {
+                flex-direction: column;
+            }
+
+            .menu .menu--item {
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <div class="logo">
+            <h1>AutoTyping.js</h1>
+        </div>
+
+        <nav>
+            <ul class="menu">
+                <li class="menu--item">
+                    <a href="#description">DESCRIPTION</a>
+                </li>
+                <li class="menu--item">
+                    <a href="#getting-started">GETTING STARTED</a>
+                </li>
+                <li class="menu--item">
+                    <a href="#options">OPTIONS</a>
+                </li>
+                <li class="menu--item">
+                    <a href="#examples">EXAMPLES</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="box" id="description">
+            <p class="title">DESCRIPTION</p>
+            <p class="description">AutoTyping.js is a lightweight (1.8 kb) library that <span class="what-is-autotyping"></span>
+            </p>
+        </div>
+
+        <div class="box" id="getting-started">
+            <p class="title">GETTING STARTED</p>
+            <div class="description">
+                <ol>
+                    <li>
+                        Grab the minified javascript file from <code>dist/autotyping.js</code>
+                    </li>
+                    <li>
+                        Initiate the library with <code>
+                            const typing = new AutoTyping('selector', [array of words]);
+                        </code>
+                        <p>e.g.</p>
+                        <code>
+                            const typing = new AutoTyping('.my-selector', ['lorem ipsum etc', 'after the first text']);
+                        </code>
+                    </li>
+                    <li>
+                        Start the typing with below code: <code>typing.start();</code>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="box" id="options">
+            <p class="title">OPTIONS</p>
+            <p class="description">
+                <ol>
+                    <li>[REQUIRED] <span class="text-bold">selector</span> (either the id or the class of the element). The selector is where the autotyping will be initiated.</li>
+                    <li>[REQUIRED] <span class="text-bold">text</span> (Array of Strings). e.g. <pre><code>[
+    'first text',
+    'second text',
+    'etc...'
+]</code></pre>
+This is where you write the text that will be written and deleted by the library.
+                    </li>
+                    <li>[OPTIONAL] <span class="text-bold">options</span> (object/map). This is how you control the library's behavior. 
+                        <ul>
+                            <li><span class="text-bold">typeSpeed</span>: in ms, default: 150
+                                <p>Controls the writing speed of each character.</p>
+                            </li>
+                            <li><span class="text-bold">deleteSpeed</span>: in ms, default: 150
+                                <p>Controls how fast/slow each character is deleted.</p>
+                            </li>
+                            <li><span class="text-bold">waitBeforeDelete</span>: in ms, default: 1000
+                                <p>Controls how much time the library will wait before deleting a word.</p>
+                            </li>
+                            <li><span class="text-bold">waitBetweenWords</span>: in ms, default: 1000
+                                <p>Controls how much time the library will wait before writing the next word.</p>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </p>
+        </div>
+        <div class="box" id="examples">
+            <p class="title">EXAMPLES</p>
+            <div class="description">
+            <span>HTML:</span>
+<pre><code>&lt;p&gt;This is an example: &lt;span class="example-selector"&gt;&lt;/span&gt;&lt;/p&gt;
+</code></pre>
+<span>Javascript:</span>
+
+<pre><code>&lt;script src="dist/autotyping.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    document.addEventListener("DOMContentLoaded", function() {
+        const exampleText = ['I can write a whole sentence.', 'Or', 'single', 'words'];
+        const exampleTyping = new AutoTyping('.example-selector', exampleText, {
+            typeSpeed: 50,
+            deleteSpeed: 50,
+            waitBeforeDelete: 2000,
+            waitBetweenWords: 500,
+        });
+        exampleTyping.start()
+    });
+&lt;/script&gt;
+</code></pre>
+<p>This is the live example of the above code:</p>
+<p>This is an example: <span class="example-selector"></span></p>
+            </div>
+        </div>
+
+        <footer>
+            <p>
+                Created with <span class="footer-text"></span> by <a href="https://github.com/tsanak">tsanak</a>
+            </p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const what_is_auto = new AutoTyping('.what-is-autotyping', ['writes and deletes text.']);
+            what_is_auto.start()
+
+            const exampleText = ['I can write a whole sentence.', 'I can write single', 'words'];
+            const exampleTyping = new AutoTyping('.example-selector', exampleText, {
+                typeSpeed: 50,
+                deleteSpeed: 50,
+                waitBeforeDelete: 2000,
+                waitBetweenWords: 500,
+            });
+            exampleTyping.start()
+
+            new AutoTyping('.footer-text', ['❤️', '☕', '⌨️', '💻'], { waitBeforeDelete: 1000, waitBetweenWords: 10, writeWhole: true}).start();
+        });
+    </script>
+</body>
+</html>
